@@ -1,0 +1,23 @@
+{
+  "meat": ["fleisch", "hähnchenbrust", "huhn", "pute", "rindfleisch", "hackfleisch", "schweinefleisch", "schinken", "speck", "wurst", "lamm", "ente", "gans", "steak", "salami", "hähnchen", "kalb", "wild", "hase", "kaninchen", "leber"],
+  "fish": ["fisch", "lachs", "thunfisch", "garnelen", "garnele", "meeresfrüchte", "forelle", "kabeljau", "hering", "muschel", "krabbe", "hummer", "tintenfisch", "sardelle", "anchovis", "scampi"],
+  "animal": ["gelatine", "schmalz", "talg", "aspik"],
+  "dairy": ["milch", "sahne", "butter", "käse", "parmesan", "mozzarella", "feta", "frischkäse", "joghurt", "quark", "schmand", "rahm", "molke", "ghee", "kefir", "skyr", "mascarpone", "ricotta", "buttermilch", "kondensmilch", "butterschmalz", "halloumi", "crème fraîche"],
+  "egg": ["ei", "eier", "eigelb", "eiweiß", "eiklar", "mayonnaise"],
+  "honey": ["honig"],
+  "gluten": ["mehl", "nudeln", "brot", "tortilla", "teig", "paniermehl", "couscous", "haferflocken", "müsli", "seitan", "brötchen", "toast", "semmel", "bier", "gerste", "dinkel", "roggen", "weizen", "grieß", "spätzle"],
+  "glutenStems": ["weizen", "roggen", "dinkel", "gerste", "seitan", "couscous", "bulgur", "nudel", "pasta", "spätzle", "paniermehl", "semmel", "grieß"],
+  "plantBasedExceptions": ["buchweizen", "kokosmilch", "kokosnussmilch", "kokosjoghurt", "kokosbutter", "pflanzenmilch", "erdnussbutter", "mandelbutter", "kakaobutter", "sojajoghurt", "sojamilch", "hafermilch", "mandelmilch", "reismehl", "maismehl", "kichererbsenmehl", "mandelmehl", "kokosmehl", "margarine"],
+  "maybe": {
+    "vegetarian": ["brühe", "worcestersauce"],
+    "vegan": ["brühe", "worcestersauce", "pesto", "schokolade"],
+    "glutenFree": ["sojasauce", "brühe", "worcestersauce", "senf", "ketchup"],
+    "lactoseFree": ["schokolade", "pesto", "brühe"]
+  },
+  "tags": {
+    "vegetarian": ["vegetarian", "vegetarisch"],
+    "vegan": ["vegan"],
+    "glutenFree": ["gluten free", "gluten-free", "glutenfrei"],
+    "lactoseFree": ["lactose free", "lactose-free", "laktosefrei", "dairy free", "dairy-free"]
+  }
+}
