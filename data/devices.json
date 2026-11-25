@@ -2,7 +2,7 @@
   "groups": [
     { "id": "mixer", "label": "Mixer & Zerkleinern", "devices": [
       { "id": "stabmixer", "label": "Stabmixer", "required": ["stabmixer", "pürierstab", "hand blender", "immersion blender", "stick blender"], "hints": ["pürier\\p{L}*", "puree[ds]?"] },
-      { "id": "standmixer", "label": "Standmixer", "required": ["standmixer", "(?<!immersion |hand |stick )blender", "(?<!stand |hand )mixer"], "hints": ["smoothie\\p{L}*"] },
+      { "id": "standmixer", "label": "Standmixer", "required": ["standmixer", "(?<!immersion |hand |stick )blender"], "hints": ["smoothie\\p{L}*", "(?<!hand |stand )mixer"] },
       { "id": "thermomix", "label": "Thermomix", "required": ["thermomix", "tm[356]", "tm31", "monsieur cuisine", "cookit"], "hints": [] },
       { "id": "kuechenmaschine", "label": "Küchenmaschine", "required": ["küchenmaschine", "kitchenaid", "kenwood", "food processor", "stand mixer"], "hints": [] },
       { "id": "zerkleinerer", "label": "Zerkleinerer", "required": ["zerkleinerer", "häcksler", "mini[- ]?chopper", "chopper"], "hints": [] }
@@ -20,7 +20,7 @@
       { "id": "toaster", "label": "Toaster", "required": ["toaster"], "hints": [] },
       { "id": "waffeleisen", "label": "Waffeleisen", "required": ["waffeleisen", "waffle iron", "waffle maker"], "hints": [] },
       { "id": "sandwichmaker", "label": "Sandwichmaker", "required": ["sandwichmaker", "sandwich maker", "sandwich toaster", "toastie maker"], "hints": [] },
-      { "id": "grill", "label": "Grill", "required": ["grill", "barbecue", "bbq"], "hints": ["grillen"] },
+      { "id": "grill", "label": "Grill", "required": ["barbecue", "bbq", "gasgrill", "holzkohlegrill", "kohlegrill", "elektrogrill", "charcoal grill", "gas grill", "outdoor grill"], "hints": ["grill", "grillen", "grillpfanne", "grill pan"] },
       { "id": "eismaschine", "label": "Eismaschine", "required": ["eismaschine", "ice cream maker"], "hints": [] },
       { "id": "brotbackautomat", "label": "Brotbackautomat", "required": ["brotbackautomat", "bread machine", "bread maker"], "hints": [] },
       { "id": "fritteuse", "label": "Fritteuse", "required": ["fritteuse", "deep fryer", "deep-fat fryer"], "hints": [] },

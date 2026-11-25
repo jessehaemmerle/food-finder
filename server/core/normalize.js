@@ -21,7 +21,12 @@ for (const [canonical, aliases] of Object.entries(data)) {
   aliasToCanonical.set(canonical, canonical);
   for (const alias of aliases) if (!aliasToCanonical.has(alias)) aliasToCanonical.set(alias, canonical);
 }
-const compoundTargets = [...aliasToCanonical.keys()].filter((k) => k.length >= 5 && !k.includes(' ')).sort((a, b) => b.length - a.length);
+// Compound words (Kirschtomaten) are only resolved through heads that are safe: Meerrettich, Granatapfel or Hafersahne must not collapse into radieschen, apfel or sahne.
+const compoundHeads = new Set(JSON.parse(readFileSync(new URL('../../data/compound-heads.json', import.meta.url), 'utf8')));
+const compoundTargets = [...aliasToCanonical]
+  .filter(([k, canonical]) => compoundHeads.has(canonical) && k.length >= 4 && !k.includes(' '))
+  .map(([k]) => k)
+  .sort((a, b) => b.length - a.length);
 
 function singularCandidates(s) {
   const out = [s];

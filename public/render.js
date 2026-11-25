@@ -25,7 +25,7 @@ export function formatTime(min) {
   return rest ? `${hours} Std. ${rest} Min.` : `${hours} Std.`;
 }
 
-export function recipeCard(recipe, { deviceLabels, ownedDevices, sourceLabels, favorite, onFavorite, showDetails = true, difficultyFiltered = false }) {
+export function recipeCard(recipe, { deviceLabels, ownedDevices, sourceLabels, favorite, onFavorite, showDetails = true }) {
   const total = (recipe.have?.length ?? 0) + (recipe.missing?.length ?? 0);
   const required = (recipe.devices ?? []).filter((d) => d.level === 'required');
   const heart = h('button', {
@@ -39,8 +39,7 @@ export function recipeCard(recipe, { deviceLabels, ownedDevices, sourceLabels, f
   const meta = h('p', { class: 'meta' },
     h('span', {}, sourceLabels[recipe.source] ?? recipe.source),
     showDetails && h('span', {}, formatTime(recipe.timeMin)),
-    showDetails && recipe.difficulty && h('span', {}, `Aufwand: ${recipe.difficulty}`),
-    showDetails && !recipe.difficulty && difficultyFiltered && h('span', {}, 'Aufwand unbekannt'),
+    showDetails && recipe.difficulty && h('span', {}, `Aufwand: ${recipe.difficulty}${recipe.difficultyEstimated ? ' (geschätzt)' : ''}`),
     recipe.language === 'en' && h('span', {}, 'Englisch'),
   );
 

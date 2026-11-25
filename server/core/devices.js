@@ -20,14 +20,20 @@ export function listDevices() {
   };
 }
 
+// "Ofen oder Mikrowelle", "alternatively microwave", "kann auch im Slow Cooker": the device is optional, so it is only mentioned.
+const ALTERNATIVE = /(?<![\p{L}])(?:oder|or|alternativ\p{L}*|alternatively|kann auch|can also|optional\p{L}*|wahlweise|falls vorhanden|if you have|if using)(?![\p{L}])/iu;
+
 export function detectDevices(text) {
   if (typeof text !== 'string' || !text) return [];
-  const found = [];
-  for (const d of compiled) {
-    if (d.required?.test(text)) found.push({ id: d.id, level: 'required' });
-    else if (d.hints?.test(text)) found.push({ id: d.id, level: 'mentioned' });
+  const best = new Map();
+  for (const sentence of text.split(/(?<=[.!?;])\s+|\n+/)) {
+    const optional = ALTERNATIVE.test(sentence);
+    for (const d of compiled) {
+      const level = d.required?.test(sentence) ? (optional ? 'mentioned' : 'required') : d.hints?.test(sentence) ? 'mentioned' : null;
+      if (level && best.get(d.id) !== 'required') best.set(d.id, level);
+    }
   }
-  return found;
+  return compiled.filter((d) => best.has(d.id)).map((d) => ({ id: d.id, level: best.get(d.id) }));
 }
 
 export function deviceVerdict(detected, ownedIds, customNames, text) {

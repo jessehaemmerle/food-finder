@@ -156,7 +156,6 @@ function cardOptions() {
     deviceLabels,
     ownedDevices: state.devices,
     sourceLabels,
-    difficultyFiltered: Boolean(state.filters.difficulty),
     onFavorite: (recipe) => { update(toggleFavorite(state, recipe)); updateFavoritesCount(); if (inFavorites) renderFavorites(); else rerenderResults(); },
   };
 }
