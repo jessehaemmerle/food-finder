@@ -1,0 +1,31 @@
+{
+  "groups": [
+    { "id": "mixer", "label": "Mixer & Zerkleinern", "devices": [
+      { "id": "stabmixer", "label": "Stabmixer", "required": ["stabmixer", "pürierstab", "hand blender", "immersion blender", "stick blender"], "hints": ["pürier\\p{L}*", "puree[ds]?"] },
+      { "id": "standmixer", "label": "Standmixer", "required": ["standmixer", "(?<!immersion |hand |stick )blender", "(?<!stand |hand )mixer"], "hints": ["smoothie\\p{L}*"] },
+      { "id": "thermomix", "label": "Thermomix", "required": ["thermomix", "tm[356]", "tm31", "monsieur cuisine", "cookit"], "hints": [] },
+      { "id": "kuechenmaschine", "label": "Küchenmaschine", "required": ["küchenmaschine", "kitchenaid", "kenwood", "food processor", "stand mixer"], "hints": [] },
+      { "id": "zerkleinerer", "label": "Zerkleinerer", "required": ["zerkleinerer", "häcksler", "mini[- ]?chopper", "chopper"], "hints": [] }
+    ] },
+    { "id": "cook", "label": "Garen & Backen", "devices": [
+      { "id": "backofen", "label": "Backofen", "required": ["backofen", "ofen", "oven"], "hints": ["backblech", "umluft", "ober-?/?unterhitze"] },
+      { "id": "mikrowelle", "label": "Mikrowelle", "required": ["mikrowelle", "microwave"], "hints": [] },
+      { "id": "heissluftfritteuse", "label": "Heißluftfritteuse", "required": ["heißluftfritteuse", "heissluftfritteuse", "airfryer", "air fryer", "air-fryer"], "hints": [] },
+      { "id": "dampfgarer", "label": "Dampfgarer", "required": ["dampfgarer", "steamer", "steam oven"], "hints": ["dämpf\\p{L}*", "dampfgar\\p{L}*"] },
+      { "id": "slowcooker", "label": "Slow Cooker", "required": ["slow[- ]?cooker", "schongarer", "crock[- ]?pot"], "hints": [] },
+      { "id": "schnellkochtopf", "label": "Schnellkochtopf / Instant Pot", "required": ["schnellkochtopf", "instant pot", "pressure cooker", "dampfkochtopf", "multicooker"], "hints": [] },
+      { "id": "reiskocher", "label": "Reiskocher", "required": ["reiskocher", "rice cooker"], "hints": [] }
+    ] },
+    { "id": "other", "label": "Sonstiges", "devices": [
+      { "id": "toaster", "label": "Toaster", "required": ["toaster"], "hints": [] },
+      { "id": "waffeleisen", "label": "Waffeleisen", "required": ["waffeleisen", "waffle iron", "waffle maker"], "hints": [] },
+      { "id": "sandwichmaker", "label": "Sandwichmaker", "required": ["sandwichmaker", "sandwich maker", "sandwich toaster", "toastie maker"], "hints": [] },
+      { "id": "grill", "label": "Grill", "required": ["grill", "barbecue", "bbq"], "hints": ["grillen"] },
+      { "id": "eismaschine", "label": "Eismaschine", "required": ["eismaschine", "ice cream maker"], "hints": [] },
+      { "id": "brotbackautomat", "label": "Brotbackautomat", "required": ["brotbackautomat", "bread machine", "bread maker"], "hints": [] },
+      { "id": "fritteuse", "label": "Fritteuse", "required": ["fritteuse", "deep fryer", "deep-fat fryer"], "hints": [] },
+      { "id": "wok", "label": "Wok", "required": ["wok"], "hints": [] },
+      { "id": "sousvide", "label": "Sous-vide", "required": ["sous[- ]?vide", "vakuumgarer", "immersion circulator"], "hints": [] }
+    ] }
+  ]
+}
