@@ -7,7 +7,7 @@ export class HttpError extends Error {
   }
 }
 
-export const ALLOWED_HOSTS = ['www.themealdb.com', 'www.lecker.de', 'api.chefkoch.de', 'www.chefkoch.de'];
+export const ALLOWED_HOSTS = ['www.themealdb.com', 'www.kuechengoetter.de', 'www.einfachkochen.de', 'www.chefkoch.de'];
 const USER_AGENT = 'FoodFinder/1.0 (Hobby-Projekt)';
 const MAX_REDIRECTS = 3;
 
