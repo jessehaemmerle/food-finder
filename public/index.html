@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Finder – Rezepte aus dem, was du hast</title>
+  <meta name="description" content="Gib deine Zutaten und Küchengeräte ein und finde passende Rezepte aus mehreren Quellen.">
+  <meta name="color-scheme" content="light dark">
+  <script src="/theme.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+  <header class="masthead">
+    <div class="wrap masthead__row">
+      <div>
+        <h1>Food Finder</h1>
+        <p class="tagline">Sag uns, was in der Küche steht. Wir finden die Rezepte dazu.</p>
+      </div>
+      <div class="masthead__tools">
+        <button type="button" class="ghost" id="open-favorites" aria-pressed="false">Merkliste <span id="favorites-count" class="count">0</span></button>
+        <button type="button" class="ghost" id="theme-toggle" aria-pressed="false">Dunkel</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="steps wrap" aria-label="Schritte">
+    <ol>
+      <li><button type="button" data-step="ingredients"><span class="steps__n">1</span> Zutaten</button></li>
+      <li><button type="button" data-step="devices"><span class="steps__n">2</span> Geräte</button></li>
+      <li><button type="button" data-step="results"><span class="steps__n">3</span> Rezepte</button></li>
+    </ol>
+  </nav>
+
+  <main id="main" class="wrap">
+    <section id="step-ingredients" class="panel" aria-labelledby="h-ingredients">
+      <h2 id="h-ingredients" tabindex="-1">Was hast du da?</h2>
+      <form id="ingredient-form" class="add" autocomplete="off">
+        <div class="add__field">
+          <label for="ingredient-input">Zutat hinzufügen</label>
+          <input id="ingredient-input" type="text" maxlength="60" role="combobox" aria-expanded="false" aria-controls="suggestions" aria-autocomplete="list" placeholder="z. B. Tomate, Hähnchenbrust, Reis">
+          <ul id="suggestions" role="listbox" aria-label="Vorschläge" hidden></ul>
+        </div>
+        <button type="submit" class="secondary">Hinzufügen</button>
+      </form>
+      <ul id="ingredient-list" class="chips" aria-label="Deine Zutaten"></ul>
+      <p id="ingredient-empty" class="note">Noch keine Zutaten. Tippe oben los, Englisch geht auch.</p>
+      <p class="note">Salz, Pfeffer, Öl, Wasser, Zucker und Mehl gelten als vorhanden.</p>
+      <div class="actions"><button type="button" class="primary" id="to-devices">Weiter zu den Geräten</button></div>
+    </section>
+
+    <section id="step-devices" class="panel" aria-labelledby="h-devices" hidden>
+      <h2 id="h-devices" tabindex="-1">Was steht in deiner Küche?</h2>
+      <p class="note">Rezepte, die ein Gerät brauchen, das du nicht hast, blenden wir aus. Der Herd gilt immer als vorhanden.</p>
+      <div id="device-groups"></div>
+      <form id="custom-device-form" class="add" autocomplete="off">
+        <div class="add__field">
+          <label for="custom-device-input">Eigenes Gerät hinzufügen</label>
+          <input id="custom-device-input" type="text" maxlength="60" placeholder="z. B. Zauberstab, Raclette">
+        </div>
+        <button type="submit" class="secondary">Hinzufügen</button>
+      </form>
+      <ul id="custom-device-list" class="chips" aria-label="Eigene Geräte"></ul>
+      <div class="actions">
+        <button type="button" class="secondary" id="back-to-ingredients">Zurück</button>
+        <button type="button" class="primary" id="to-results">Rezepte suchen</button>
+      </div>
+    </section>
+
+    <section id="step-results" class="panel" aria-labelledby="h-results" hidden>
+      <h2 id="h-results" tabindex="-1">Rezepte für dich</h2>
+      <form id="filters" class="filters" aria-label="Filter">
+        <fieldset>
+          <legend>Ernährung</legend>
+          <label class="check"><input type="checkbox" name="vegetarian"> Vegetarisch</label>
+          <label class="check"><input type="checkbox" name="vegan"> Vegan</label>
+          <label class="check"><input type="checkbox" name="glutenFree"> Glutenfrei</label>
+          <label class="check"><input type="checkbox" name="lactoseFree"> Laktosefrei</label>
+        </fieldset>
+        <div class="filters__row">
+          <div>
+            <label for="max-time">Zeit</label>
+            <select id="max-time" name="maxTimeMin">
+              <option value="">egal</option><option value="15">bis 15 Minuten</option><option value="30">bis 30 Minuten</option><option value="60">bis 1 Stunde</option><option value="120">bis 2 Stunden</option>
+            </select>
+          </div>
+          <div>
+            <label for="difficulty">Aufwand</label>
+            <select id="difficulty" name="difficulty">
+              <option value="">egal</option><option value="einfach">nur einfach</option><option value="mittel">bis mittel</option><option value="schwer">auch schwer</option>
+            </select>
+          </div>
+        </div>
+      </form>
+      <p id="diet-note" class="note" hidden>Die Ernährungsfilter lesen nur die Zutatenlisten. Prüfe die Zutaten, bevor du kochst.</p>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <ul id="sources" class="sources" aria-label="Quellen"></ul>
+      <div id="blocked-note" class="blocked" hidden>
+        <p id="blocked-text"></p>
+        <button type="button" class="secondary" id="toggle-blocked"></button>
+      </div>
+      <ul id="results" class="results"></ul>
+      <div class="actions"><button type="button" class="secondary" id="back-to-devices">Zurück zu den Geräten</button></div>
+    </section>
+
+    <section id="favorites-view" class="panel" aria-labelledby="h-favorites" hidden>
+      <h2 id="h-favorites" tabindex="-1">Deine Merkliste</h2>
+      <p id="favorites-empty" class="note">Noch nichts gemerkt. Das Herz an einem Rezept legt es hier ab.</p>
+      <ul id="favorites-list" class="results"></ul>
+    </section>
+  </main>
+  <footer class="wrap foot"><p>Rezepte stammen von TheMealDB, Küchengötter, einfach kochen und Chefkoch. Die Rezepte liegen bei den Quellen, wir verlinken nur.</p></footer>
+</body>
+</html>

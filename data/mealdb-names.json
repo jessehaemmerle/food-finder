@@ -1,0 +1,22 @@
+{
+  "hähnchenbrust": "Chicken Breast", "huhn": "Chicken", "pute": "Turkey", "rindfleisch": "Beef", "hackfleisch": "Minced Beef",
+  "schweinefleisch": "Pork", "schinken": "Ham", "speck": "Bacon", "wurst": "Sausages", "lamm": "Lamb", "ente": "Duck",
+  "lachs": "Salmon", "thunfisch": "Tuna", "garnelen": "Prawns", "fisch": "White Fish",
+  "tomate": "Tomatoes", "passata": "Passata", "tomatenmark": "Tomato Puree", "zwiebel": "Onions", "frühlingszwiebel": "Spring Onions",
+  "schalotte": "Shallots", "knoblauch": "Garlic", "kartoffel": "Potatoes", "süßkartoffel": "Sweet Potatoes", "karotte": "Carrots",
+  "paprika": "Red Pepper", "gurke": "Cucumber", "zucchini": "Zucchini", "aubergine": "Aubergine", "brokkoli": "Broccoli",
+  "spinat": "Spinach", "salat": "Lettuce", "rucola": "Rocket", "kohl": "Cabbage", "lauch": "Leek", "sellerie": "Celery",
+  "pilze": "Mushrooms", "mais": "Sweetcorn", "erbsen": "Peas", "bohnen": "Kidney Beans", "kichererbsen": "Chickpeas",
+  "linsen": "Lentils", "kürbis": "Pumpkin", "rote bete": "Beetroot", "spargel": "Asparagus", "ingwer": "Ginger",
+  "avocado": "Avocado", "zitrone": "Lemon", "limette": "Lime", "orange": "Orange", "apfel": "Apples", "banane": "Banana",
+  "mango": "Mango", "kokosmilch": "Coconut Milk", "petersilie": "Parsley", "basilikum": "Basil", "koriander": "Coriander",
+  "dill": "Dill", "schnittlauch": "Chives", "thymian": "Thyme", "rosmarin": "Rosemary", "oregano": "Oregano", "salbei": "Sage",
+  "minze": "Mint", "chili": "Chilli", "kreuzkümmel": "Cumin", "kurkuma": "Turmeric", "zimt": "Cinnamon", "curry": "Curry Powder",
+  "honig": "Honey", "ei": "Eggs", "milch": "Milk", "sahne": "Double Cream", "butter": "Butter", "käse": "Cheese",
+  "parmesan": "Parmesan", "mozzarella": "Mozzarella", "feta": "Feta", "frischkäse": "Cream Cheese", "joghurt": "Yogurt",
+  "schmand": "Sour Cream", "nudeln": ["Spaghetti", "Penne Rigate", "Macaroni"], "reis": "Rice", "brot": "Bread",
+  "tortilla": "Tortillas", "haferflocken": "Oats", "couscous": "Couscous", "sojasauce": "Soy Sauce", "essig": "Vinegar",
+  "senf": "Mustard", "ketchup": "Tomato Ketchup", "mayonnaise": "Mayonnaise", "nüsse": ["Almonds", "Walnuts", "Cashews"],
+  "erdnussbutter": "Peanut Butter", "tofu": "Tofu", "oliven": ["Green Olives", "Black Olives"], "kapern": "Capers",
+  "rosinen": "Raisins", "kakao": "Cocoa", "schokolade": "Dark Chocolate", "speisestärke": "Cornstarch"
+}
